@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 import userRouter from './Routes/user.routes.js'
+import authRouter from './Routes/auth.route.js'
 
 dotenv.config();
 mongoose.connect(process.env.MONGO).then(()=>{
@@ -11,9 +12,11 @@ mongoose.connect(process.env.MONGO).then(()=>{
 })
 
 const app = express(); //creating the app
+app.use(express.json());
 
 app.listen(3000, () => {
     console.log("App is listening on port: 3000"); //creating the listener port
   });
 
   app.use('/api/user',userRouter)
+  app.use('/api/auth', authRouter)
