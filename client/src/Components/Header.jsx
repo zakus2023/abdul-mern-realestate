@@ -23,7 +23,7 @@ export default function Header() {
           <FaSearch className="text-slate-500 cursor-pointer" />
         </form>
 
-        <ul className="flex gap-4">
+        <ul className="flex gap-7">
           <Link to="/">
             <li className="hidden sm:inline text-slate-700 hover:underline">
               Home
@@ -38,7 +38,7 @@ export default function Header() {
 
           <Link to="/profiles">
             {currentUser ? (
-              <img src={currentUser.avatar} alt="Profile" className="rounded-full h-8 w-8 object-cover" />
+              <img src={currentUser.avatar} alt="Profile" className="rounded-full h-9 w-9 object-cover" />
             ) : (
               <li className=" text-slate-700 hover:underline">Sign In</li>
             )}
