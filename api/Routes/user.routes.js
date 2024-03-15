@@ -1,10 +1,11 @@
 import express from "express";
-import { test } from "../Controllers/user.controller.js";
+import { test, updateUser } from "../Controllers/user.controller.js";
 import { signin } from "../Controllers/auth.controller.js";
+import { verifyToken } from "../utils/verifyUser.js";
 
 const router = express.Router(); //creating the router
 
-router.get("/test",test);
-
+router.get("/test", test);
+router.post("/update/:id", verifyToken, updateUser);
 
 export default router;
