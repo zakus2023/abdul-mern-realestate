@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import userRouter from "./Routes/user.routes.js";
 import authRouter from "./Routes/auth.route.js";
 import cookieParser from "cookie-parser";
+import listingRouter from './Routes/listing.route.js'
+
 
 dotenv.config();
 mongoose
@@ -25,6 +27,7 @@ app.listen(3000, () => {
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use('/api/listing',listingRouter);
 
 //error handling middleware api
 
