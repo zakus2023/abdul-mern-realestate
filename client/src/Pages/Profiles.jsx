@@ -221,7 +221,7 @@ export default function Profile() {
         </button>
         <Link
           className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
-          to={'/create-listing'}
+          to={'/createlisting'}
         >
           Create Listing
         </Link>
@@ -280,7 +280,7 @@ export default function Profile() {
                 >
                   Delete
                 </button>
-                <Link to={`/update-listing/${listing._id}`}>
+                <Link to={`/updatelisting/${listing._id}`}>
                   <button className='text-green-700 uppercase'>Edit</button>
                 </Link>
               </div>
