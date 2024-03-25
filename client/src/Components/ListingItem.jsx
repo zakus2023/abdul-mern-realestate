@@ -44,6 +44,7 @@ export default function ListingItem({ listing }) {
                 ? `${listing.bathrooms} baths `
                 : `${listing.bathrooms} bath `}
             </div>
+            
           </div>
         </div>
       </Link>
