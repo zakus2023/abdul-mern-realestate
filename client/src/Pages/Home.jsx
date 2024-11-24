@@ -60,7 +60,7 @@ export default function Home() {
           <br /> place with ease
         </h1>
         <div className="text-grey-400 text-sm sm:text-lg">
-          Abdul Estates is the best place to find your next perfect place to
+          Abdul Real Estates is the best place to find your next perfect place to
           live. <br />
           We have a wide range of properties for you to choose from.
         </div>
