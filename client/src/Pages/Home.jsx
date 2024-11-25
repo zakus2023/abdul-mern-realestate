@@ -5,6 +5,8 @@ import SwiperCore from 'swiper'
 import { Navigation } from "swiper/modules";
 import 'swiper/css/bundle'
 import ListingItem from '../Components/ListingItem';
+import Banner from "../Components/Banner";
+import Footer from "../Components/Footer";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -53,24 +55,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-6 p-28 px-10  w-full mx-auto">
-      <div className="text-slate-700 font-bold text-3xl lg:text-6xl ml-20 mb-3">
-        <h1 className="mb-5">
-          Find your next <span className="text-slate-500">perfect</span>
-          <br /> place with ease
-        </h1>
-        <div className="text-grey-400 text-sm sm:text-lg">
-          Abdul Real Estates is the best place to find your next perfect place to
-          live. <br />
-          We have a wide range of properties for you to choose from.
-        </div>
-        <Link
-          to={"/search"}
-          className="text-sm sm:text-lg text-blue-800 font-bold hover:underline"
-        >
-          Let's get started...
-        </Link>
-      </div>
+    <div className="">
+      <Banner/>
+       <div className="flex flex-col gap-6 p-5 px-10  w-full mx-auto">
+      
       <div className=' mx-auto p-3 flex flex-col gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
           <div className='flex flex-col'>
@@ -114,5 +102,8 @@ export default function Home() {
       </div>
       
     </div>
+    <Footer/>
+    </div>
+   
   );
 }
