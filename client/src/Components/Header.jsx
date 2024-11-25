@@ -11,7 +11,7 @@ export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
-  console.log(searchTerm)
+  console.log(searchTerm);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -21,21 +21,21 @@ export default function Header() {
     navigate(`/search?${searchQuery}`);
   };
 
-  useEffect(()=>{
-    const urlParams = new URLSearchParams(location.search)
-    const searchTermFromUrl = urlParams.get('searchTerm')
-    if(searchTermFromUrl){
-      setSearchTerm(searchTermFromUrl)
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get("searchTerm");
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
     }
-  },[location.search])
-
-  
+  }, [location.search]);
 
   return (
-    <div className="header">
+    <div className="header px-10">
       <div className="navigator">
         <div className="left-navigator">
-          <img src={logo} alt="logo" className="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" className="logo" />
+          </Link>
           <form className="header-form" onSubmit={handleSearchSubmit}>
             <input
               type="text"
@@ -59,14 +59,20 @@ export default function Header() {
             <Link to="/contact" className="link">
               <li>Contact us</li>
             </Link>
-            
-            <Link to="/profiles" className="profile-pic link">
+
+            <div className="flex gap-2">
               {currentUser ? (
-                <img src={currentUser.avatar} alt="pic" className="upic" />
+                <Link to="/profiles" className="profile-pic link">
+                  {" "}
+                  <img src={currentUser.avatar} alt="pic" className="upic" />
+                </Link>
               ) : (
-               <Link to='/signin'> <li>Signin</li></Link>
+                <Link to="/signin">
+                  {" "}
+                  <li>Signin</li>
+                </Link>
               )}
-            </Link>
+            </div>
           </ul>
         </div>
       </div>

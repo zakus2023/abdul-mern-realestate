@@ -19,7 +19,7 @@ export default function Banner() {
             <p>For everyone</p>
         </div>
         <div className="banner-latest-btn">
-            <Link to='/searchListing' className='searcListing'>
+            <Link to='/search' className='searcListing'>
             <div>Let us get started</div>
             </Link>
             <img src={arrow_icon} alt="" />
